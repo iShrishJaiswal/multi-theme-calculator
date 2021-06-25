@@ -71,21 +71,27 @@ a {
 }
 body {
     min-height: 100vh;
-    display: grid;
-    /* place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--main-bg);
     color: var(--body-text);
 }
 .container {
     width: 100%;
+    max-width: 960px;
     padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 header{
     display: flex;
     grid-column: 1 / 2;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
+    padding: 0px 0 1%;
 }
 
 .theme-number {
@@ -181,16 +187,12 @@ background: transparent;
     font-family: 'Spartan';
     display: flex;
     justify-content: flex-end;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 button {
     /* aspect-ratio: 1/1; */
-    padding: 19px 15px 15px;
+    /* padding: 25% 20%; */
     border-radius: 5px;
     font-size: 1.7rem;
     text-align: center;
@@ -204,14 +206,16 @@ button {
 .numbers {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px 10px;
-    padding: 25px;
+    grid-template-rows: repeat(5, 1fr);
+    height: 60vh;
+    gap: 20px 15px;
+    padding: 20px;
     border-radius: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background: var(--keypad-bg);
 }
 .delete, .reset, .equals {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .delete {
     background: var(--del-reset-bg);
@@ -230,97 +234,34 @@ button {
     color: var(--equal-text);
     box-shadow: 0 5px var(--equal-shadow);
     grid-column: 3 / span 2;
-    /* aspect-ratio: 2/1; */
 }
 
-
-@media (min-width: 480px) {
-    .container {
-        width: 40%;
-        margin: 0 auto;
-        height: 90%;
+@media (min-width: 600px) {
+    :root {
+        font-size: 22px;
+    }
+    #display {
+        height: 130px;
     }
 }
 
-
-
-
-/* THEME 2 */
-/* body{
-    background: hsl(0, 0%, 90%);
-    color: black;
+@media (min-width: 960px) {
+    :root {
+        font-size: 25px;
+    }
+    #display {
+        height: 15vh;
+        font-size: 1.9rem;
+    }
+    .numbers {
+        padding: 40px;
+        gap: 40px;
+    }
+    button {
+        font-size: 2rem;
+        padding-top: 5px;
+    }
+    .delete, .reset, .equals {
+        font-size: 2rem;
+    }
 }
-
-button {
-    background: hsl(45, 7%, 89%);
-    color: hsl(60, 10%, 19%);
-    box-shadow:0 5px hsl(35, 11%, 61%);
-}
-.numbers {
-    background: hsl(0, 5%, 81%);
-}
-.delete, .reset {
-    background:hsl(185, 42%, 37%);
-    box-shadow: 0 5px hsl(185, 58%, 25%);
-}
-.equals {
-    background: hsl(25, 98%, 40%);
-    box-shadow: 0 5px hsl(25, 99%, 27%);
-}
-header {
-    color: hsl(60, 10%, 19%);
-}
-#display {
-    background: white;
-    color: hsl(60, 10%, 19%);
-}
-
-#selector::-webkit-slider-runnable-track {
-    background: hsl(0, 5%, 81%);
-}
-#selector::-webkit-slider-thumb {
-    background: hsl(25, 98%, 40%);
-} */
-
-
-
-
-
-
-/* THEME 3 */
-/* body{
-    background: hsl(268, 75%, 9%);
-    color: black;
-}
-
-button {
-    background: hsl(268, 47%, 21%);
-    color: hsl(52, 100%, 62%);
-    box-shadow:0 5px hsl(290, 70%, 36%);
-}
-.numbers {
-    background: hsl(268, 71%, 12%);
-}
-.delete, .reset {
-    background:hsl(281, 89%, 26%);
-    box-shadow: 0 5px hsl(285, 91%, 52%);
-}
-.equals {
-    background: hsl(176, 100%, 44%);
-    color: hsl(198, 20%, 13%);
-    box-shadow: 0 5px hsl(25, 99%, 27%);
-}
-header {
-    color: hsl(52, 100%, 62%);
-}
-#display {
-    background: hsl(268, 71%, 12%);
-    color: hsl(52, 100%, 62%);
-}
-
-#selector::-webkit-slider-runnable-track {
-    background: hsl(268, 71%, 12%);
-}
-#selector::-webkit-slider-thumb {
-    background: hsl(176, 100%, 44%);
-} */

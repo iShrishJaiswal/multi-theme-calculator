@@ -39,7 +39,7 @@ equals.addEventListener('click', function (e) {
     if (ev.length >= '13') {
         ev = ev.slice(0, 12);
     }
-    display.innerText = ev;
+    display.innerText = ev.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 })
 
 deleteBtn.addEventListener('click', function () {
@@ -48,7 +48,7 @@ deleteBtn.addEventListener('click', function () {
     if (ev === '*' || ev === '+' || ev === '-' || ev === '/') {
         ev = ev.slice(0, -1);
     }
-    display.innerText = ev;
+    display.innerText = ev.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     if (ev === "") {
         ev = '0';
         display.innerText = ev;
@@ -75,7 +75,8 @@ for (btn of numButtons) {
                 ev = ev.concat(this.value);
             }
         }
-        display.innerText = ev;
+        // ev = ev.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        display.innerText = ev.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     })
 }
 
