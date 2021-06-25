@@ -39,6 +39,9 @@ equals.addEventListener('click', function (e) {
     if (ev.length >= '13') {
         ev = ev.slice(0, 12);
     }
+    if (ev === 'NaN' || ev === 'Infinity') {
+        ev = 'Error';
+    }
     display.innerText = ev.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 })
 
