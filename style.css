@@ -243,7 +243,9 @@ button {
         height: 130px;
     }
     .container {
+        justify-content: space-evenly;
         height: 100vh;
+        max-width: 600px;
     }
 }
 
