@@ -27,17 +27,17 @@ const deleteBtn = document.querySelector('.delete');
 const reset = document.querySelector('.reset');
 const equals = document.querySelector('.equals');
 const display = document.querySelector('.output');
-let ev = '';
+let ev = '0';
 
 display.innerText = 0;
 reset.addEventListener('click', function () {
     display.innerText = 0;
-    ev = '';
+    ev = '0';
 })
 equals.addEventListener('click', function (e) {
     ev = `${eval(ev)}`;
     if (ev.length >= '13') {
-        ev = ev.slice(0, 13);
+        ev = ev.slice(0, 12);
     }
     display.innerText = ev;
 })
@@ -50,20 +50,22 @@ deleteBtn.addEventListener('click', function () {
     }
     display.innerText = ev;
     if (ev === "") {
-        display.innerText = 0;
+        ev = '0';
+        display.innerText = ev;
     }
 })
 
 for (btn of numButtons) {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', function () {
         if (ev.length < '13') {
             if (display.innerText === '0') {
-                if (this.value !== '*' || this.value !== '+' || this.value !== '-' || this.value !== '/') {
+                if (this.value !== '/' && this.value !== '*' && this.value !== '+' && this.value !== '-' && this.value !== '.') {
                     ev = "";
                     display.innerText = "";
                 }
             }
-            let last = ev.indexOf(ev.length - 1);
+            let last = ev.charAt(ev.length-1);
+            console.log(last);
             if (this.value === '*' || this.value === '+' || this.value === '-' || this.value === '/') {
                 if (last !== this.value) {
                     ev = ev.concat(this.value);
