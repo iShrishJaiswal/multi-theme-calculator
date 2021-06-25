@@ -79,7 +79,7 @@ body {
 }
 .container {
     width: 100%;
-    max-width: 960px;
+    max-width: 900px;
     padding: 20px;
     height: 100vh;
     display: flex;
@@ -191,8 +191,7 @@ background: transparent;
 }
 
 button {
-    /* aspect-ratio: 1/1; */
-    /* padding: 25% 20%; */
+
     border-radius: 5px;
     font-size: 1.7rem;
     text-align: center;
@@ -238,10 +237,13 @@ button {
 
 @media (min-width: 600px) {
     :root {
-        font-size: 22px;
+        font-size: 20px;
     }
     #display {
         height: 130px;
+    }
+    .container {
+        height: 100vh;
     }
 }
 
@@ -249,13 +251,17 @@ button {
     :root {
         font-size: 25px;
     }
+    .container {
+        width: 900px;
+    }
     #display {
         height: 15vh;
-        font-size: 1.9rem;
+        font-size: 1.3rem;
+        align-items: center;
     }
     .numbers {
         padding: 40px;
-        gap: 40px;
+        gap: 30px;
     }
     button {
         font-size: 2rem;
